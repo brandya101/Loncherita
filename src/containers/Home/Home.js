@@ -1,11 +1,9 @@
 import React, { Component, PropTypes } from 'react';
-// styled component added 
-import styled from 'styled-components';
-import Container from '../theme/grid/Container';
-
-const Image = styled.img`
-    width: 100%
-`;
+import {Container} from '../../theme/grid';
+import {
+    Image,
+    FoodTruckIllust 
+} from './Home.style';
 
 export default class Home extends Component {
     static propTypes = {};
@@ -14,7 +12,9 @@ export default class Home extends Component {
         return (
             <Container>
                 <h1>Hi Home</h1>
-                <Image src={require("../assets/foodTruckIllust1.jpg")} alt="fTI1"/>
+                <FoodTruckIllust>
+                    <h2>THIS SHIT IS HARD AF</h2>
+                </FoodTruckIllust>
                 <p>
                     sample quotes about lochenrita. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut finibus nulla velit, sed bibendum erat tincidunt nec. Nam ultricies lacus et risus porttitor placerat. Nam erat ex, varius eu viverra quis, varius mattis orci. Vestibulum elementum imperdiet est. Nam tincidunt tortor in bibendum convallis. In cursus interdum hendrerit. Quisque odio nulla, tempor nec metus at, vulputate consequat ex. Aenean gravida accumsan dui at laoreet. Ut viverra mi sed lacinia lobortis.
                     Nam a quam imperdiet, rhoncus leo et, tempor magna. Mauris tincidunt consequat risus ut porta. Cras gravida tortor nunc, vitae scelerisque magna efficitur id. Ut eget turpis orci. Sed lacus velit, euismod vitae metus et, porta varius neque. Quisque ullamcorper sit amet leo at malesuada. Aliquam erat volutpat. Quisque fermentum euismod justo, et varius augue tincidunt at. Vivamus facilisis commodo mauris id volutpat. Duis maximus urna a volutpat posuere. Nulla sit amet mollis libero. Morbi vitae augue id metus accumsan egestas nec ac urna. Donec mollis gravida magna. Donec risus risus, condimentum dignissim consequat sit amet, rhoncus quis leo.
