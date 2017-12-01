@@ -12,7 +12,7 @@ const Footer = () =>
         <Navbar.Collapse>
           <Nav>
             <div className="copyright">
-              <Glyphicon glyph="glyphicon glyphicon-copyright-mark" /> 2017 Group Red
+              <Glyphicon glyph="glyphicon glyphicon-copyright-mark" /> 2017 Loncherita - Group Red
             </div>
           </Nav>
           <Nav pullRight>

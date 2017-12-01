@@ -11,7 +11,8 @@ const Header = () => (
       <Navbar.Collapse>
         <Nav>
           <IndexLinkContainer to="/">
-            <NavItem>Home</NavItem>
+            <NavItem>lonche home
+            </NavItem>
           </IndexLinkContainer>
           <LinkContainer to="/video">
             <NavItem>Video</NavItem>
