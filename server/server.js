@@ -36,6 +36,9 @@ app.use(
 app.use(passport.initialize())
 app.use(passport.session()) // will call the deserializeUser
 
+// Router
+require("./yelpRoutes") (app);
+
 // ===== testing middleware =====
 // app.use(function(req, res, next) {
 // 	console.log('===== passport user =======')

@@ -131,7 +131,7 @@ class App extends Component {
 				<Router>
 					<div>
 						<Route path="/" render={() => <Header />} />
-						<Route path="/" render={() => <DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn}/>}/>						
+						{/* <Route path="/" render={() => <DisplayLinks _logout={this._logout} loggedIn={this.state.loggedIn}/>}/>						 */}
 						<Switch>
 							<Route exact path="/" render={() => <Home />} />
 							<Route path="/video" render={() => <Video />} />
@@ -140,6 +140,7 @@ class App extends Component {
 							<Route path="/gallery" render={() => <Gallery />} />
 							{/* <Route path="/login" render={() => <Login />} /> */}
 							<Route path='/list' component={List} />
+							<div className="loginAndSignup">
 							<Route
 								exact
 								path="/login"
@@ -150,6 +151,7 @@ class App extends Component {
 									/>}
 							/>
 							<Route exact path="/signup" component={SignupForm} />
+							</div>
 							<Route component={NotFound} />
 							{/* <LoginForm _login={this._login} /> */}
 						</Switch>

@@ -26,6 +26,12 @@ const Header = () => (
           <LinkContainer to="/gallery">
             <NavItem>Gallery</NavItem>
           </LinkContainer>
+          <LinkContainer to="/login">
+            <NavItem>Login</NavItem>
+          </LinkContainer>
+          <LinkContainer to="/signup">
+            <NavItem>Sign Up</NavItem>
+          </LinkContainer>
         </Nav>
           
           {/*<Nav pullRight>

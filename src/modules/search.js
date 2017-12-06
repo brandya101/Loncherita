@@ -16,6 +16,8 @@ import React, { Component } from 'react';
 import './search.css';
 import poster from '../images/poster.png';
 import yelp from 'yelp-fusion';
+import axios from 'axios';
+// import yelpApi from './yelpApi'
 
 // const yelp = require('yelp-fusion');
 const clientId = 'Hae34UC7SAHGztdO6453UA';
@@ -23,8 +25,21 @@ const clientSecret = 'yFj8g7qj0KOFCHMfcPkn1wCWnFgSrZ3s6eHiyRpfwKnlxuXl0qcuFcIFM6
 
 class Search extends Component {
 
+  // this is where you present it on the frontend -start
+  // state = {}
+
+  // componentDidMount(){
+  //   this._getResults();
+  // }
+
+
+  // this is where you present it on the frontend - end
+
+
+
   constructor(props) {
     super(props);
+    this.state = {searchLocation:""}
     yelp.accessToken(clientId, clientSecret)
     .then(response => {
       console.log(response.jsonBody.access_token);
@@ -33,14 +48,27 @@ class Search extends Component {
     });
   }
 
-
-
+  handleChange = e => {
+    this.setState({searchLocation:e.target.value})
+  }
+  handleSubmit = e => {
+    e.stopPropagation()
+    e.preventDefault()
+    axios.get(`/search?q=${this.state.searchLocation}`)
+      .then(function (results) {
+        console.log(results)
+      })
+  }
   render() {
     return (
       <div className="Search">
         <h1>
           Hello this is search section
         </h1>
+        <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} value={this.state.searchLocation} />
+        </form>
+
         <SearchPoster />
       </div>
     )
