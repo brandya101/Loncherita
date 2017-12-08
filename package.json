@@ -33,7 +33,7 @@
 		"nodemon": "^1.11.0"
 	},
 	"engines": {
-		"node": "0.12.7"
+		"node": ">=4.8.6"
 	},
 	"scripts": {
 		"start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon server/server.js\" \"react-scripts start\"",
