@@ -13,9 +13,10 @@ const yelpApi = function(searchLocation) {
 
             client.search({
                 term: 'food_truck',
-                location: searchLocation
+                location: searchLocation,
+                limit: 6
             }).then(response => {
-                // console.log(response.jsonBody.businesses);
+                console.log(response);
                 res(response.jsonBody.businesses)
             }).catch(e => {
                 rej(e);    

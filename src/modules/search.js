@@ -1,5 +1,5 @@
 // import React from 'react'
-import {Jumbotron,Accordion,Panel} from 'react-bootstrap'
+import {Jumbotron,Accordion,Panel,Row,Col,Button} from 'react-bootstrap'
 
 // from wheresmycoffee code 
 // import React, { Component } from 'react';
@@ -52,6 +52,8 @@ class Search extends Component {
         }
       })
   }
+
+
   render() {
     return (
       <div className="Search">
@@ -60,21 +62,23 @@ class Search extends Component {
             FIND YOUR FOOD TRUCK
           </h1>
         </div>
+
         <div className="Search_Buttom">
           <form onSubmit={this.handleSubmit}>
             <input placeholder="Enter your location" onChange={this.handleChange} value={this.state.searchLocation} />
           </form>
         </div>
         <div className="Search_Column">
-          {this.state.error ? this.state.error :
-            <ul>
-              {this.state.results.map(result => <SearchResult key={result.id} result={result} />)}
-            </ul>
-          }
-          {/* <div className="searchedResult">
-            <h6>Searched location result</h6>
-            {this.state.searchLocation}
-          </div> */}
+          <Row>
+            
+              {this.state.error ? this.state.error :
+                this.state.results.map(result => <SearchResult key={result.id} result={result} />)
+              }
+              {/* <div className="searchedResult">
+              <h6>Searched location result</h6>
+              {this.state.searchLocation}
+              </div> */}
+          </Row>
         </div>
         <SearchPoster />
       </div>
@@ -93,12 +97,13 @@ class SearchPoster extends Component {
 }
 
 const SearchResult = ({ result }) => 
-  <li>
+  <Col xs={4}>
     {result.name}
-    <img src={result.image_url} alt={result.name}/>
+    <img src={result.image_url} alt={result.name} style={{width: "100%", maxHeight: "250px"}}/>
     {result.phone}
     {result.price}
     {result.rating}
-  </li>
+    {result.location.display_address}
+  </Col>
 
 export default Search;

@@ -11,29 +11,29 @@ const Header = () => (
       <Navbar.Collapse>
         <Nav>
           <IndexLinkContainer to="/">
-            <NavItem>lonche home
+            <NavItem>LONCHERITA
             </NavItem>
           </IndexLinkContainer>
           <LinkContainer to="/video">
-            <NavItem>Video</NavItem>
+            <NavItem>VIDEO</NavItem>
           </LinkContainer>
           <LinkContainer to="/contact">
-            <NavItem>Contact</NavItem>
+            <NavItem>CONTACT</NavItem>
           </LinkContainer>
           <LinkContainer to="/search">
-            <NavItem>Search</NavItem>
+            <NavItem>SEARCH</NavItem>
           </LinkContainer>
           <LinkContainer to="/gallery">
-            <NavItem>Gallery</NavItem>
+            <NavItem>ORDER</NavItem>
           </LinkContainer>
         </Nav>
           
         <Nav pullRight>
             <LinkContainer to="/login">
-              <NavItem>Login</NavItem>
+              <NavItem>LOGIN</NavItem>
             </LinkContainer>
             <LinkContainer to="/signup">
-              <NavItem>Sign Up</NavItem>
+              <NavItem>SIGN UP</NavItem>
             </LinkContainer>
         </Nav>
 
