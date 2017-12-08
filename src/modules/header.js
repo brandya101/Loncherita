@@ -26,24 +26,16 @@ const Header = () => (
           <LinkContainer to="/gallery">
             <NavItem>ORDER</NavItem>
           </LinkContainer>
-          <LinkContainer to="/login">
-            <NavItem>LOGIN</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/signup">
-            <NavItem>SIGN UP</NavItem>
-          </LinkContainer>
         </Nav>
           
-          {/*<Nav pullRight>
-            <Navbar.Form className="right-nav">
-            <FormGroup>
-              <InputGroup>
-                <InputGroup.Addon><Glyphicon glyph="search" /></InputGroup.Addon>
-                <FormControl type="text" style={{width:'125px'}} placeholder="Search..." />
-              </InputGroup>
-            </FormGroup>
-            </Navbar.Form>
-          </Nav>*/}
+        <Nav pullRight>
+            <LinkContainer to="/login">
+              <NavItem>LOGIN</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/signup">
+              <NavItem>SIGN UP</NavItem>
+            </LinkContainer>
+        </Nav>
 
       </Navbar.Collapse>
     </Navbar>

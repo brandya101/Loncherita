@@ -11,10 +11,10 @@ nav {
   z-index: 1;
   display: flex;
   justify-content: space-between;
-  
-  h3 {
-    padding-left: 1rem;
-  }
+}
+
+nav h3 {
+  padding-left: 1rem;
 }
 
 .Cart {
