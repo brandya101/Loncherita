@@ -5,7 +5,7 @@ import {Thumbnail, Grid,Row, Col, Button} from 'react-bootstrap'
 // import custom lib
 import product from '../images/product.png'
 import Paginations from './paginations'
-import MenuItem from '../components/shoppingCart/Cart'
+import MenuItem from '../components/Menu/Menu'
 
 class Product extends React.Component { 
     render() { 
