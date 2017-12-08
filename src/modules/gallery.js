@@ -5,6 +5,7 @@ import {Thumbnail, Grid,Row, Col, Button} from 'react-bootstrap'
 // import custom lib
 import product from '../images/product.png'
 import Paginations from './paginations'
+import MenuItem from '../components/shoppingCart/Cart'
 
 class Product extends React.Component { 
     render() { 
@@ -13,121 +14,16 @@ class Product extends React.Component {
         )  
     }
 }
-const Gallery = () => (
-  <Grid>
-    <Row>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-      <Col xs={6} md={4}>
-        <LinkContainer to="/login">
-          <Thumbnail>
-            <h3>Product name</h3>
-            <Product />
-            <p>Description of the product</p>
-            <p>
-              <Button bsStyle="success">Buy</Button>&nbsp;
-            </p>
-          </Thumbnail>
-        </LinkContainer> 
-      </Col>
-    </Row>
-    <div>
-      <Paginations className="paginations"/>
-    </div>
-  </Grid>
-)
+
+class Gallery extends React.Component{
+    render(){
+        return(
+            <div>
+                <MenuItem />
+            </div>
+        );
+    }
+};
+
+
 export default Gallery;
