@@ -15,8 +15,10 @@ const yelpApi = function(searchLocation) {
                 term: 'food_truck',
                 location: searchLocation
             }).then(response => {
-                console.log(response.jsonBody.businesses);
+                // console.log(response.jsonBody.businesses);
                 res(response.jsonBody.businesses)
+            }).catch(e => {
+                rej(e);    
             });
         }).catch(e => {
             console.log(e);
