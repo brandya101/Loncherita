@@ -16,6 +16,9 @@ import React, { Component } from 'react';
 import './search.css';
 import poster from '../images/poster.png';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Gallery from './gallery';
+
 
 // import yelpApi from '../../server/yelpApi';
 
@@ -72,7 +75,7 @@ class Search extends Component {
           <Row>
             
               {this.state.error ? this.state.error :
-                this.state.results.map(result => <SearchResult key={result.id} result={result} />)
+                this.state.results.map(result => <Link to="/gallery"><SearchResult key={result.id} result={result} /></Link>)
               }
               {/* <div className="searchedResult">
               <h6>Searched location result</h6>
