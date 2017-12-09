@@ -1,5 +1,6 @@
 
-import React from 'react'
+import React from 'react';
+import Checkout from './Checkout/Checkout'
 
 var MenuItem = React.createClass({
     getItems: function() {
@@ -18,34 +19,39 @@ var MenuItem = React.createClass({
     getInitialState: function() {
       return {
         items: this.getItems(),
-        cart: []
+        cart: [],
+        subTotal:[]
       }
     },
     addToCart: function(item) {
       var found = false;
       var updatedCart = this.state.cart.map((cartItem) => {
-          console.log(cartItem);
         if (cartItem.name == item.name) {
           found = true;
           cartItem.quantity++;
+          cartItem.subTotal=cartItem.price*cartItem.quantity;
+          this.setState({subTotal:cartItem.subTotal})
           return cartItem;
         } else {
           return cartItem;
         }
       });
       
-      if (!found) { updatedCart.push({id: item.id, name: item.name, price: item.price, quantity: 1}) }
-      
+      if (!found) { updatedCart.push({id: item.id, name: item.name, price: item.price, quantity: 1,}) }
+
       this.setState({
         cart: updatedCart
       });
     },
     render: function(){
+        console.log(this.state.subTotal);
       return (
         <div className="row">
             <h3>Menu</h3>
             <div className="col-md-4">
             <Cart cart={this.state.cart} />
+            {this.state.subTotal}
+            <Checkout name={this.props.name} description={this.props.description} amount={this.props.subTotal} />
             </div>
 
             <div className="col-md-8 Products">  
@@ -93,6 +99,7 @@ var MenuItem = React.createClass({
           <h4>{item.name}</h4>
           <h5>{item.description}</h5>
           <h5>{item.price}</h5>
+          
         </div>
       );
     }
