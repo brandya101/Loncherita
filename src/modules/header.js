@@ -23,9 +23,6 @@ const Header = () => (
           <LinkContainer to="/search">
             <NavItem>SEARCH</NavItem>
           </LinkContainer>
-          <LinkContainer to="/gallery">
-            <NavItem>ORDER</NavItem>
-          </LinkContainer>
         </Nav>
           
         <Nav pullRight>

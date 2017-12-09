@@ -61,7 +61,7 @@ class Search extends Component {
     return (
       <div className="Search">
         <div className="Search_Header">
-          <h1>
+          <h1 className="searchTitle">
             FIND YOUR FOOD TRUCK
           </h1>
         </div>
@@ -101,12 +101,18 @@ class SearchPoster extends Component {
 
 const SearchResult = ({ result }) => 
   <Col xs={4}>
-    {result.name}
-    <img src={result.image_url} alt={result.name} style={{width: "100%", maxHeight: "250px"}}/>
-    {result.phone}
-    {result.price}
-    {result.rating}
-    {result.location.display_address}
+    <h3 className="searchTitle">{result.name}</h3>
+    <img src={result.image_url} alt={result.name} style={{width: "100%", maxHeight: "auto"}}/>
+    <div className="row text">
+    Rating:{result.rating}
+    </div>
+    <div className="row text">
+    Address:{result.location.display_address}
+    </div>
+    <div className="row text">
+    Phone:{result.phone}
+    </div>
+    
   </Col>
 
 export default Search;
