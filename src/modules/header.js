@@ -1,9 +1,13 @@
 import React from 'react'
 import {LinkContainer, IndexLinkContainer} from 'react-router-bootstrap';
 import {Navbar,Nav,NavItem} from 'react-bootstrap'; //,Glyphicon,InputGroup,FormGroup, FormControl
+import Logo from '../images/logo.png'
+
 
 const Header = () => (
   <div>    
+      <img id="logo" src={Logo} alt="logo"/>
+
     <Navbar inverse collapseOnSelect>
       <Navbar.Header>
         <Navbar.Toggle />
