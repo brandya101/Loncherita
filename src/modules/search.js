@@ -101,18 +101,18 @@ class SearchPoster extends Component {
 
 const SearchResult = ({ result }) => 
   <Col xs={4}>
-    <h3 className="searchTitle">{result.name}</h3>
-    <img src={result.image_url} alt={result.name} style={{width: "100%", maxHeight: "auto"}}/>
-    <div className="row text">
-    Rating:{result.rating}
-    </div>
-    <div className="row text">
-    Address:{result.location.display_address}
-    </div>
-    <div className="row text">
-    Phone:{result.phone}
-    </div>
+    
+    
+    <img className="card-img-top" src={result.image_url} alt={result.name} style={{width: "100%", maxHeight: "auto"}}/>
+    <h3 className="card-title">{result.name}</h3>
+   <p className="card-text"> Rating:{result.rating}</p>
+  
+    <p className="card-text">Address:{result.location.display_address}</p>
+    
+    <p className="card-text">Phone:{result.phone}</p>
+  
     
   </Col>
 
 export default Search;
+

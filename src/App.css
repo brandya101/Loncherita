@@ -62,7 +62,7 @@
   padding: auto;
 }
 
-.row.text{
+p.card-text{
   color:white;
 }
 
@@ -73,4 +73,9 @@ h1.menu{
   background-color: darkblue;
   border-radius: 20px 10px;
   margin: auto;
+}
+
+img#logo{
+  max-height:"100px";
+  max-width:"100px";
 }
