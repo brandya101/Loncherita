@@ -1,16 +1,18 @@
 import React from 'react'
 import {Jumbotron, FormGroup, ControlLabel, FormControl, HelpBlock, Checkbox, Radio, Button, Glyphicon,InputGroup,Form,Col} from 'react-bootstrap'
 import createReactClass from 'create-react-class'
+import './contact.css';
+
 
 const Contact = () =>
 (
-  <div>
+  <div className="contact">
   <Jumbotron>
     <FormExample />
   </Jumbotron>
   <Jumbotron>
   <form>
-    <FieldGroup
+    {/* <FieldGroup
       id="formControlsText"
       type="text"
       label="Form elements that are useful..."
@@ -26,22 +28,25 @@ const Contact = () =>
       id="formControlsPassword"
       label="Password"
       type="password"
-    />
+    /> */}
+    <br>
+    </br>
     <FieldGroup
       id="formControlsFile"
       type="file"
-      label="File"
-      help="Example block-level help text here."
+      label="Attach any Files regarding Lonchrita"
+      help="This is Optional"
     />
-
-    <Checkbox checked readOnly>
+    <br>
+    </br>
+    {/* <Checkbox checked readOnly>
       Checkbox
-    </Checkbox>
+    </Checkbox> */}
     <Radio checked readOnly>
-      Radio
+      Rate Loncherita!
     </Radio>
 
-    <FormGroup>
+    {/* <FormGroup>
       <Checkbox inline>
         1
       </Checkbox>
@@ -53,7 +58,7 @@ const Contact = () =>
       <Checkbox inline>
         3
       </Checkbox>
-    </FormGroup>
+    </FormGroup> */}
     <FormGroup>
       <Radio name="radioGroup" inline>
         1
@@ -66,13 +71,23 @@ const Contact = () =>
       <Radio name="radioGroup" inline>
         3
       </Radio>
+      <Radio name="radioGroup" inline>
+        4
+      </Radio>
+      <Radio name="radioGroup" inline>
+        5
+      </Radio>
     </FormGroup>
+    <br>
+    </br>
 
     <FormGroup controlId="formControlsSelect">
       <ControlLabel>Select</ControlLabel>
       <FormControl componentClass="select" placeholder="select">
         <option value="select">select</option>
-        <option value="other">...</option>
+        <option value="compliment">compliment</option>
+        <option value="complain">complain</option>
+        <option value="others">others</option>
       </FormControl>
     </FormGroup>
 
@@ -82,9 +97,9 @@ const Contact = () =>
     </FormGroup>
 
     <FormGroup>
-      <ControlLabel>Static text</ControlLabel>
+      <ControlLabel>Thank you for your feedback</ControlLabel>
       <FormControl.Static>
-        email@example.com
+        loncherita@loncherita.com
       </FormControl.Static>
     </FormGroup>
 
@@ -96,14 +111,15 @@ const Contact = () =>
   <br />
   <br />
   <br />
-  <form>
+
+  {/* <form>
     <FormGroup controlId="formValidationSuccess1" validationState="success">
       <ControlLabel>Input with success</ControlLabel>
       <FormControl type="text" />
       <HelpBlock>Help text with validation state.</HelpBlock>
-    </FormGroup>
+    </FormGroup> */}
 
-    <FormGroup controlId="formValidationWarning1" validationState="warning">
+    {/* <FormGroup controlId="formValidationWarning1" validationState="warning">
       <ControlLabel>Input with warning</ControlLabel>
       <FormControl type="text" />
     </FormGroup>
@@ -205,10 +221,10 @@ const Contact = () =>
     </Radio>
     <Checkbox validationState="error">
       Checkbox with error
-    </Checkbox>
+    </Checkbox> */}
 
     {/* This requires React 15's <span>-less spaces to be exactly correct. */}
-    <FormGroup validationState="success">
+    {/* <FormGroup validationState="success">
       <Checkbox inline>
         Checkbox
       </Checkbox>
@@ -221,7 +237,7 @@ const Contact = () =>
         success
       </Checkbox>
     </FormGroup>
-  </form>
+  </form> */}
   </Jumbotron>
   </div>
 )
@@ -262,7 +278,7 @@ const FormExample = createReactClass({
           controlId="formBasicText"
           validationState={this.getValidationState()}
         >
-          <ControlLabel>Form validation based on the length of the string </ControlLabel>
+          <ControlLabel>Type your ID numbers </ControlLabel>
           <FormControl
             type="text"
             value={this.state.value}
@@ -270,7 +286,7 @@ const FormExample = createReactClass({
             onChange={this.handleChange}
           />
           <FormControl.Feedback />
-          <HelpBlock>Validation is based on string length.</HelpBlock>
+          <HelpBlock>This is Optional</HelpBlock>
         </FormGroup>
       </form>
     );
