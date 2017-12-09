@@ -20,7 +20,9 @@ var MenuItem = React.createClass({
       return {
         items: this.getItems(),
         cart: [],
-        subTotal:[]
+        subTotal:[],
+        itemTotals:{},
+
       }
     },
     addToCart: function(item) {
@@ -30,7 +32,9 @@ var MenuItem = React.createClass({
           found = true;
           cartItem.quantity++;
           cartItem.subTotal=cartItem.price*cartItem.quantity;
-          this.setState({subTotal:cartItem.subTotal})
+        
+          this.setState({itemTotals : {...this.state.itemTotals, [item.id]: cartItem.subTotal}}, ()=>{ console.log(this.state.itemTotals)})
+         
           return cartItem;
         } else {
           return cartItem;
@@ -50,14 +54,14 @@ var MenuItem = React.createClass({
             <h1 className="menu">Menu</h1>
             <br/>
             <div className="col-md-4">
-            <Cart cart={this.state.cart} />
+            <Cart itemTotals={this.state.itemTotals} cart={this.state.cart} />
             {this.state.subTotal}
             <Checkout name={this.props.name} description={this.props.description} amount={this.props.subTotal} />
             </div>
 
             <div className="col-md-8 Products">  
               {this.state.items.map((item) => {
-                return <Product details={item} addToCart={this.addToCart} />
+                return <Product key={item.id} details={item} addToCart={this.addToCart} />
               })}
             </div>
         </div>
@@ -65,29 +69,30 @@ var MenuItem = React.createClass({
     }
   });
   
-  var Cart = React.createClass({
-    getInitialState: function() {
-      return {
+  class Cart  extends React.Component {
+    constructor(props){
+      super(props)
+      this.state = { 
         open: true
       }
-    },
-    openCart: function() {
+    }
+    openCart = () =>{
       this.setState({
         open: !this.state.open
       })
-    },
-    render: function() {
+    }
+    render() {
       return (
         <div className={"Cart " + (this.state.open ? "Cart-Open" : "")} onClick={this.openCart} >
           <p className="Title">Cart</p>
           <div>
           {this.props.cart.length > 0 ? this.props.cart.map((item) => {
-            return <p>{item.name}{item.quantity > 1 ? <span> {item.quantity} </span> : ''}</p> }) : <p>Empty</p>}
+            return <p key={item.id}>{item.name}{item.quantity > 1 ? <span> {item.quantity} {this.props.itemTotals[item.id]}</span> : ''}</p> }) : <p>Empty</p>}
           </div>
         </div>
       );
     }
-  });
+  };
   
   var Product = React.createClass({
     addToCart: function() {
