@@ -36,12 +36,13 @@
 		"node": ">=4.8.6"
 	},
 	"scripts": {
-		"start": "./node_modules/.bin/concurrently \"./node_modules/.bin/nodemon server/server.js\" \"react-scripts start\"",
+		"start": "node server/server.js",
 		"build": "react-scripts build",
 		"test": "react-scripts test --env=jsdom",
 		"eject": "react-scripts eject",
 		"dev": "concurrently \"react-scripts start\" \"nodemon server/server.js\"",
-		"prod": "export NODE_ENV=\"production\" && nodemon server/server.js"
+		"prod": "export NODE_ENV=\"production\" && nodemon server/server.js",
+		"deploy": "yarn build && git add . && git commit -m \"Building for production\" && git push heroku master"
 	},
 	"proxy": "http://localhost:8080"
 }

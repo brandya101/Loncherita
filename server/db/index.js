@@ -6,6 +6,8 @@ mongoose.Promise = global.Promise
 let MONGO_URL
 const MONGO_LOCAL_URL = 'mongodb://localhost/mern-passport'
 
+console.log('------------------------', process.env.MONGODB_URI, '------------------------')
+
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI)
 	MONGO_URL = process.env.MONGODB_URI
