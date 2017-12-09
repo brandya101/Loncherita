@@ -13,9 +13,9 @@ const Footer = () =>
       </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <div className="copyright">
-              <Glyphicon glyph="glyphicon glyphicon-copyright-mark" /> 2017 Loncherita - Group Red
-            </div>
+        
+              <Glyphicon className="copyright" glyph="glyphicon glyphicon-copyright-mark" /> 2017 Loncherita - Group Red
+            
           </Nav>
           <Nav pullRight>
           <SocialIcon url="http://facebook.com" />
