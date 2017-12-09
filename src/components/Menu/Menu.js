@@ -47,7 +47,8 @@ var MenuItem = React.createClass({
         console.log(this.state.subTotal);
       return (
         <div className="row">
-            <h3>Menu</h3>
+            <h1 className="menu">Menu</h1>
+            <br/>
             <div className="col-md-4">
             <Cart cart={this.state.cart} />
             {this.state.subTotal}

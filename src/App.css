@@ -65,3 +65,12 @@
 .row.text{
   color:white;
 }
+
+h1.menu{
+  font-size: 50px;
+  color: white;
+  border: 20px dotted beige;
+  background-color: darkblue;
+  border-radius: 20px 10px;
+  margin: auto;
+}
