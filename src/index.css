@@ -22,7 +22,7 @@ nav h3 {
   padding: 1rem;
   color: #F2F2F2;
   background: #27566B;
-  overflow: hidden;
+  overflow: auto;
   max-height: 1.5rem;
   transition: all ease-out 0.3s;
   
