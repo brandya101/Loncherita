@@ -4,292 +4,94 @@ import createReactClass from 'create-react-class'
 import './contact.css';
 
 
-const Contact = () =>
-(
-  <div className="contact">
-  <Jumbotron>
-    <FormExample />
-  </Jumbotron>
-  <Jumbotron>
-  <form>
-    {/* <FieldGroup
-      id="formControlsText"
-      type="text"
-      label="Form elements that are useful..."
-      placeholder="Enter text"
-    />
-    <FieldGroup
-      id="formControlsEmail"
-      type="email"
-      label="Email address"
-      placeholder="Enter email"
-    />
-    <FieldGroup
-      id="formControlsPassword"
-      label="Password"
-      type="password"
-    /> */}
-    <br>
-    </br>
-    <FieldGroup
-      id="formControlsFile"
-      type="file"
-      label="Attach any Files regarding Lonchrita"
-      help="This is Optional"
-    />
-    <br>
-    </br>
-    {/* <Checkbox checked readOnly>
-      Checkbox
-    </Checkbox> */}
-    <Radio checked readOnly>
-      Rate Loncherita!
-    </Radio>
+class Contact extends React.Component{
+  state = {
+    comment:"",
+  };
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+    // Updating the input's state
+    this.setState({
+      [name]: value
+    });
+  };
+  handleFormSubmit = event => {
+    // Preventing the default behavior of the form submit (which is to refresh the page)
+    event.preventDefault();
+    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
+    console.log(this.state.comment);
+    this.setState({
+      comment:"",
+    });
+  };
 
-    {/* <FormGroup>
-      <Checkbox inline>
-        1
-      </Checkbox>
-      {' '}
-      <Checkbox inline>
-        2
-      </Checkbox>
-      {' '}
-      <Checkbox inline>
-        3
-      </Checkbox>
-    </FormGroup> */}
-    <FormGroup>
-      <Radio name="radioGroup" inline>
-        1
-      </Radio>
-      {' '}
-      <Radio name="radioGroup" inline>
-        2
-      </Radio>
-      {' '}
-      <Radio name="radioGroup" inline>
-        3
-      </Radio>
-      <Radio name="radioGroup" inline>
-        4
-      </Radio>
-      <Radio name="radioGroup" inline>
-        5
-      </Radio>
-    </FormGroup>
-    <br>
-    </br>
+  render(){
+    return(
+      <div className="contact">
+      <Jumbotron>
+      <h1>Contact Us!</h1>
+      <form> 
+          <h2>Rate Loncherita!</h2>
+        <FormGroup>
+          <Radio name="radioGroup" inline>
+            1
+          </Radio>
+          {' '}
+          <Radio name="radioGroup" inline>
+            2
+          </Radio>
+          {' '}
+          <Radio name="radioGroup" inline>
+            3
+          </Radio>
+          <Radio name="radioGroup" inline>
+            4
+          </Radio>
+          <Radio name="radioGroup" inline>
+            5
+          </Radio>
+        </FormGroup>
+        <br>
+        </br>
 
-    <FormGroup controlId="formControlsSelect">
-      <ControlLabel>Select</ControlLabel>
-      <FormControl componentClass="select" placeholder="select">
-        <option value="select">select</option>
-        <option value="compliment">compliment</option>
-        <option value="complain">complain</option>
-        <option value="others">others</option>
-      </FormControl>
-    </FormGroup>
+        <FormGroup controlId="formControlsSelect">
+          <ControlLabel>Select</ControlLabel>
+          <FormControl componentClass="select" placeholder="select">
+            <option value="select">select</option>
+            <option value="compliment">compliment</option>
+            <option value="complain">complain</option>
+            <option value="others">others</option>
+          </FormControl>
+        </FormGroup>
 
-    <FormGroup controlId="formControlsTextarea">
-      <ControlLabel>Textarea</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="textarea" />
-    </FormGroup>
+        <FormGroup controlId="formControlsTextarea">
+          <ControlLabel>Leave us a comment!</ControlLabel>
+          <FormControl componentClass="textarea" placeholder="Write your comment..." name="comment" value={this.state.comment} onChange={this.handleInputChange}/>
+        </FormGroup>
 
-    <FormGroup>
-      <ControlLabel>Thank you for your feedback</ControlLabel>
-      <FormControl.Static>
-        loncherita@loncherita.com
-      </FormControl.Static>
-    </FormGroup>
+        <FormGroup>
+          <ControlLabel>Thank you for your feedback</ControlLabel>
+          <FormControl.Static>
+            loncherita@loncherita.com
+          </FormControl.Static>
+        </FormGroup>
 
-    <Button type="submit">
-      Submit
-    </Button>
-  </form>
+        <Button type="submit" onClick={this.handleFormSubmit}>
+          Submit
+        </Button>
+      </form>
 
-  <br />
-  <br />
-  <br />
+      <br />
+      <br />
+      <br />
 
-  {/* <form>
-    <FormGroup controlId="formValidationSuccess1" validationState="success">
-      <ControlLabel>Input with success</ControlLabel>
-      <FormControl type="text" />
-      <HelpBlock>Help text with validation state.</HelpBlock>
-    </FormGroup> */}
 
-    {/* <FormGroup controlId="formValidationWarning1" validationState="warning">
-      <ControlLabel>Input with warning</ControlLabel>
-      <FormControl type="text" />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationError1" validationState="error">
-      <ControlLabel>Input with error</ControlLabel>
-      <FormControl type="text" />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationNull" validationState={null}>
-      <ControlLabel>Input with no validation state</ControlLabel>
-      <FormControl type="text" />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationSuccess2" validationState="success">
-      <ControlLabel>Input with success and feedback icon</ControlLabel>
-      <FormControl type="text" />
-      <FormControl.Feedback />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationWarning2" validationState="warning">
-      <ControlLabel>Input with warning and feedback icon</ControlLabel>
-      <FormControl type="text" />
-      <FormControl.Feedback />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationError2" validationState="error">
-      <ControlLabel>Input with error and feedback icon</ControlLabel>
-      <FormControl type="text" />
-      <FormControl.Feedback />
-    </FormGroup>
-
-    <FormGroup controlId="formValidationSuccess3" validationState="success">
-      <ControlLabel>Input with success and custom feedback icon</ControlLabel>
-      <FormControl type="text" />
-      <FormControl.Feedback>
-        <Glyphicon glyph="music" />
-      </FormControl.Feedback>
-    </FormGroup>
-
-    <FormGroup controlId="formValidationWarning3" validationState="warning">
-      <ControlLabel>Input group with warning</ControlLabel>
-      <InputGroup>
-        <InputGroup.Addon>@</InputGroup.Addon>
-        <FormControl type="text" />
-      </InputGroup>
-      <FormControl.Feedback />
-    </FormGroup>
-
-    <Form componentClass="fieldset" horizontal>
-      <FormGroup controlId="formValidationError3" validationState="error">
-        <Col componentClass={ControlLabel} xs={3}>
-          Input with error
-        </Col>
-        <Col xs={9}>
-          <FormControl type="text" />
-          <FormControl.Feedback />
-        </Col>
-      </FormGroup>
-
-      <FormGroup controlId="formValidationSuccess4" validationState="success">
-        <Col componentClass={ControlLabel} xs={3}>
-          Input group with success
-        </Col>
-        <Col xs={9}>
-          <InputGroup>
-            <InputGroup.Addon>@</InputGroup.Addon>
-            <FormControl type="text" />
-          </InputGroup>
-          <FormControl.Feedback />
-        </Col>
-      </FormGroup>
-    </Form>
-
-    <Form componentClass="fieldset" inline>
-      <FormGroup controlId="formValidationWarning4" validationState="warning">
-        <ControlLabel>Input with warning</ControlLabel>
-        {' '}
-        <FormControl type="text" />
-        <FormControl.Feedback />
-      </FormGroup>
-      {' '}
-      <FormGroup controlId="formValidationError4" validationState="error">
-        <ControlLabel>Input group with error</ControlLabel>
-        {' '}
-        <InputGroup>
-          <InputGroup.Addon>@</InputGroup.Addon>
-          <FormControl type="text" />
-        </InputGroup>
-        <FormControl.Feedback />
-      </FormGroup>
-    </Form>
-
-    <Checkbox validationState="success">
-      Checkbox with success
-    </Checkbox>
-    <Radio validationState="warning">
-      Radio with warning
-    </Radio>
-    <Checkbox validationState="error">
-      Checkbox with error
-    </Checkbox> */}
-
-    {/* This requires React 15's <span>-less spaces to be exactly correct. */}
-    {/* <FormGroup validationState="success">
-      <Checkbox inline>
-        Checkbox
-      </Checkbox>
-      {' '}
-      <Checkbox inline>
-        with
-      </Checkbox>
-      {' '}
-      <Checkbox inline>
-        success
-      </Checkbox>
-    </FormGroup>
-  </form> */}
-  </Jumbotron>
-  </div>
-)
-
-function FieldGroup({ id, label, help, ...props }) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
+      </Jumbotron>
+      </div>
+    )
+  }
 }
 
-// validation form example
-const FormExample = createReactClass({
-  getInitialState() {
-    return {
-      value: ''
-    };
-  },
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-  },
-
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  },
-
-  render() {
-    return (
-      <form>
-        <FormGroup
-          controlId="formBasicText"
-          validationState={this.getValidationState()}
-        >
-          <ControlLabel>Type your ID numbers </ControlLabel>
-          <FormControl
-            type="text"
-            value={this.state.value}
-            placeholder="Enter text"
-            onChange={this.handleChange}
-          />
-          <FormControl.Feedback />
-          <HelpBlock>This is Optional</HelpBlock>
-        </FormGroup>
-      </form>
-    );
-  }
-});
 export default Contact;

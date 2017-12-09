@@ -14,18 +14,16 @@ const Header = () => (
             <NavItem>LONCHERITA
             </NavItem>
           </IndexLinkContainer>
+          <LinkContainer to="/search">
+            <NavItem>SEARCH</NavItem>
+          </LinkContainer>
           <LinkContainer to="/video">
             <NavItem>VIDEO</NavItem>
           </LinkContainer>
           <LinkContainer to="/contact">
             <NavItem>CONTACT</NavItem>
           </LinkContainer>
-          <LinkContainer to="/search">
-            <NavItem>SEARCH</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/gallery">
-            <NavItem>ORDER</NavItem>
-          </LinkContainer>
+          
         </Nav>
           
         <Nav pullRight>
