@@ -1,0 +1,16 @@
+/* .jumbotron {
+    background-color: #172A40;
+    margin: auto;
+} */
+
+.footer {
+    font-size: 20px;
+    color: #FFF7DC;
+    margin-bottom: 20px;
+    /* margin-top: 20px; */
+    /* padding: 0 20px; */
+}
+
+.copyright {
+    margin-top: 10px;
+}

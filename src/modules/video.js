@@ -4,13 +4,15 @@ import { Player, ControlBar, CurrentTimeDisplay, TimeDivider, VolumeMenuButton, 
 import "../../node_modules/video-react/dist/video-react.css";
 import poster from '../images/poster.png';
 import video from '../videos/ft.mp4';
+import './video.css';
+
 
 const Video = () =>
 (
   <div className="jumbotron">
-    <h3>
-      Check out this month's food truck videos
-    </h3>
+      <h3 className="header">
+          CHECK OUT THIS MONTH'S FOOD TRUCK NEWS
+      </h3>
     <Player poster={poster}>
       <source src={video} />
       <BigPlayButton position="center" />

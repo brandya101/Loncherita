@@ -14,7 +14,7 @@ import {Jumbotron,Accordion,Panel,Row,Col,Button} from 'react-bootstrap'
 
 import React, { Component } from 'react';
 import './search.css';
-import poster from '../images/poster.png';
+import poster from '../images/7.png';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Gallery from './gallery';

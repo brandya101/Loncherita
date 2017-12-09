@@ -1,6 +1,8 @@
 import React from 'react'
 import {SocialIcon} from 'react-social-icons'
 import {Navbar,Nav, Glyphicon} from 'react-bootstrap'
+import './footer.css';
+
 
 const Footer = () => 
 (
